@@ -192,9 +192,10 @@ export default {
         const rouiter = useRouter();
 
         const logout = function () {
-            store.commit("logout");
-            router.push({
-                name: "Login",
+            store.dispatch("logout").then((res) => {
+                router.push({
+                    name: "Login",
+                });
             });
         };
         return {
