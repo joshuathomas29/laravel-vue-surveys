@@ -16,7 +16,8 @@ class AuthController extends Controller
             'password' => [
                 'required',
                 'confirmed',
-                Password::min(8)->mixedCase()->numbers()->symbols()
+                // add options for extra required password strength if wanted (eg ->mixedCase())
+                Password::min(8)
             ],
         ]);
 
